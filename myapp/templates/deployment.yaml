@@ -1,24 +1,8 @@
-```
-     apiVersion: apps/v1
-     kind: Deployment
-     metadata:
-       name: {{ include "myapp.name" . }}
-       labels:
-         {{ include "myapp.labels" . | nindent 8 }}
-     spec:
-       replicas: {{ .Values.replicaCount }}
-       selector:
-         matchLabels:
-           {{ include "myapp.labels" . | nindent 12 }}
-       template:
-         metadata:
-           labels:
-             {{ include "myapp.labels" . | nindent 14 }}
-         spec:
-           containers:
-             - name: {{ .Chart.Name }}
-               image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-               imagePullPolicy: {{ .Values.image.pullPolicy }}
-               ports:
-                 - containerPort: 5000
-     ```
+---
+"' apiVersion: apps/v1 kind: Deployment metadata: name: {{ include
+\"myapp.name\" . }} labels: {{ include \"myapp.labels\" . | nindent 8 }} spec:
+replicas: {{ .Values.replicaCount }} selector: matchLabels: {{ include
+\"myapp.labels\" . | nindent 12 }} template: metadata: labels: {{ include
+\"myapp.labels\" . | nindent 14 }} spec: containers: - name: {{ .Chart.Name }}
+image: {{ .Values.image.repository }}:{{ .Values.image.tag }} imagePullPolicy:
+{{ .Values.image.pullPolicy }} ports: - containerPort: 5000 '"

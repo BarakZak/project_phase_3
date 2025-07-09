@@ -1,13 +1,10 @@
-```
-     replicaCount: 1
+replicaCount: 1
+ image:
+   repository: barakzak/myapp
+   tag: "latest"
+   pullPolicy: Always
 
-     image:
-       repository: barakzak/myapp
-       tag: "latest"
-       pullPolicy: Always
-
-     service:
-       type: ClusterIP
-       port: 80
-       targetPort: 5000
-     ```
+ service:
+   type: ClusterIP
+   port: 80
+   targetPort: 5000
