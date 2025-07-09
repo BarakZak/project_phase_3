@@ -1,0 +1,13 @@
+```
+     replicaCount: 1
+
+     image:
+       repository: barakzak/myapp
+       tag: "latest"
+       pullPolicy: Always
+
+     service:
+       type: ClusterIP
+       port: 80
+       targetPort: 5000
+     ```
